@@ -17,13 +17,23 @@
     <div class="mb-3">
       <label for="exampleInputPassword class="form-label">Password</label>
       <input
-        type="text"
+        type="password"
         class="form-control"
         id="exampleInputPassword"
         name="password"
         required
       />
+      <div class="form-text">
+        <input type="checkbox" onclick="toggleShowPassword()"> Show Password
+      </div>      
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
+<script>
+  function toggleShowPassword(){
+  let password = document.getElementById("exampleInputPassword");
+  let type=password.getAttribute('type')==='password' ? 'text' : 'password'
+  password.setAttribute('type',type);
+  }
+</script>
